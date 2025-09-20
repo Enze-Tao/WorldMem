@@ -242,7 +242,7 @@ class BasePytorchAlgo(pl.LightningModule, ABC):
         for k, v in [("mean", mean), ("std", std)]:
             if isinstance(v, str):
                 if v.endswith(".npy"):
-                    v = torch.from_numpy(np.load(v))
+                    v = torch.from_numpy(np.load(v, allow_pickle=True))
                 elif v.endswith(".pt"):
                     v = torch.load(v)
                 else:

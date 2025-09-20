@@ -374,7 +374,7 @@ def on_image_click(selected_image):
 
 def set_memory(examples_case):
     if examples_case == '1':
-        data_bundle = np.load("assets/examples/case1.npz")
+        data_bundle = np.load("assets/examples/case1.npz", allow_pickle=True)
         input_history = data_bundle['input_history'].item()
         video_frames = data_bundle['memory_frames']
         memory_latent_frames = data_bundle['self_frames']
@@ -383,7 +383,7 @@ def set_memory(examples_case):
         memory_c2w = data_bundle['self_memory_c2w']
         memory_frame_idx = data_bundle['self_frame_idx']
     elif examples_case == '2':
-        data_bundle = np.load("assets/examples/case2.npz")
+        data_bundle = np.load("assets/examples/case2.npz", allow_pickle=True)
         input_history = data_bundle['input_history'].item()
         video_frames = data_bundle['memory_frames']
         memory_latent_frames = data_bundle['self_frames']
@@ -392,7 +392,7 @@ def set_memory(examples_case):
         memory_c2w = data_bundle['self_memory_c2w']
         memory_frame_idx = data_bundle['self_frame_idx']
     elif examples_case == '3':
-        data_bundle = np.load("assets/examples/case3.npz")
+        data_bundle = np.load("assets/examples/case3.npz", allow_pickle=True)
         input_history = data_bundle['input_history'].item()
         video_frames = data_bundle['memory_frames']
         memory_latent_frames = data_bundle['self_frames']
@@ -401,7 +401,7 @@ def set_memory(examples_case):
         memory_c2w = data_bundle['self_memory_c2w']
         memory_frame_idx = data_bundle['self_frame_idx']
     elif examples_case == '4':
-        data_bundle = np.load("assets/examples/case4.npz")
+        data_bundle = np.load("assets/examples/case4.npz", allow_pickle=True)
         input_history = data_bundle['input_history'].item()
         video_frames = data_bundle['memory_frames']
         memory_latent_frames = data_bundle['self_frames']

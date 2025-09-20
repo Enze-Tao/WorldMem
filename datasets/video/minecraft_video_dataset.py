@@ -141,7 +141,7 @@ class MinecraftVideoDataset(BaseVideoDataset):
         # === 2. Load paths and data arrays ===
         video_path = self.data_paths[file_idx]
         action_path = video_path.with_suffix(".npz")
-        data = np.load(action_path)
+        data = np.load(action_path, allow_pickle=True)
         actions_pool = convert_action_space(data["actions"])
         poses_pool = data["poses"]
 

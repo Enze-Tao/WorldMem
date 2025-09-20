@@ -139,7 +139,8 @@ class BaseVideoDataset(torch.utils.data.Dataset, ABC):
             external_cond = np.load(
                 # pylint: disable=no-member
                 self.condition_dir
-                / f"{video_path.name.replace('.mp4', '.npy')}"
+                / f"{video_path.name.replace('.mp4', '.npy')}",
+                allow_pickle=True
             )
             if len(external_cond) < self.n_frames:
                 external_cond = np.pad(external_cond, ((0, pad_len),))
